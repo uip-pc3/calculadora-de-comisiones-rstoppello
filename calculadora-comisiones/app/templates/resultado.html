@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div  class="col-md-4"></div>
+    <div  class="col-md-4">
+      <h2>Resultados:</h2>
+    <div class="col-md-4"></div>
+
+    <div  class="col-md-12" style="border:dashed 1px cyan">
+      <h3>Nombre: {{ nombre|capitalize }}</h3>
+        <h3>Apellido: {{ apellido|capitalize }}</h3>
+        <h3>Venta total: {{ venta }}</h3>
+       <h3>Comision otorgada: {{ comision }}</h3>
+        <h3 style="background:orange;color:white;">{{ warning }}</h3>
+</div>
+
+
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}

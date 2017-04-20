@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .error-red{
+        padding:10px;
+        background:red;
+        color:white;
+    }
+    .error-input{
+        border:red;
+        box-shadow:0px 0px 10px red;
+    }
+
+
+</style>
+<div class="container">
+    <div  class="col-md-4"></div>
+    <div  class="col-md-4">
+      <h2>Calculadora de comisiones</h2>
+       {% if err %}
+            <h3 class="error-red">{{ err }}</h3>
+        {% else %}
+        {% endif %}
+        <form action='/resultado' method="POST">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input value="{{ nombre }}"  name="nombre" type="text" class="form-control " id="nombre" placeholder="Ingresa el nombre">
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input value="{{ apellido }}" name="apellido" type="text" class="form-control " id="apellido" placeholder="Ingresa el apellido">
+        </div>
+        <div class="form-group">
+          <label for="venta">Monto de la venta</label>
+          <input value="{{ venta }}" name="venta" type="text" class="form-control  " id="venta" placeholder="Ingrese el monto de la venta (solo numeros)">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
